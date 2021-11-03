@@ -6,16 +6,16 @@ export const ProductMDCard = ({ product }) => {
    return (
       <>
          <div className="box-shadow flex items-center relative w-full h-40 bg-custom rounded-md overflow-hidden">
-            <section className="px-2 w-40 h-32 relative">
-               <Link href={`/product/${product && product.handle}`}>
-                  <a className="cursor-pointer">
+            <section className="px-2">
+               <Link href={`/product/${product && product.handle}`} passHref={true}>
+                  <div className="relative w-28 h-32">
                      <Image
                         src={product && product.images[0].src}
                         alt={product && product.title}
                         layout="fill"
                         objectFit="contain"
                      />
-                  </a>
+                  </div>
                </Link>
             </section>
             <section className="flex flex-col w-full justify-center pl-4 bg-white h-full">

@@ -32,6 +32,7 @@ export const Hero = () => {
                   alt="nextify"
                   layout="fill"
                   objectFit="contain"
+                  priority={true}
                />
             </section>
          </div>

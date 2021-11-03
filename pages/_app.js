@@ -1,7 +1,6 @@
 import { useEffect, useReducer } from 'react';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import NProgress from 'nprogress';
-import Head from 'next/head';
 
 import { Navbar } from '../components/Navbar';
 import { CartContext } from '../context/CartContext';
@@ -14,15 +13,32 @@ import '../styles/globals.css';
 
 export default function MyApp({ Component, pageProps }) {
    NProgress.configure({ showSpinner: false });
+   const router = useRouter();
    const [cartState, dispatch] = useReducer(CartReducer, []);
 
-   Router.events.on('routeChangeStart', () => {
-      NProgress.start();
-   });
+   useEffect(() => {
+      router.events.on('routeChangeStart', () => {
+         NProgress.start();
+      });
+      return () => {
+         router.events.off('routeChangeStart', () => {
+            NProgress.start();
+         });
+      };
+   }, [router]);
 
-   Router.events.on('routeChangeComplete', () => {
-      NProgress.done();
-   });
+   useEffect(() => {
+      router.events.on('routeChangeComplete', () => {
+         NProgress.done();
+      });
+      return () => {
+         router.events.off('routeChangeStart', () => {
+            NProgress.start();
+         });
+      };
+   }, [router]);
+
+
 
    useEffect(() => {
       const cartStorage = JSON.parse(localStorage.getItem('cart') || []);
@@ -35,18 +51,6 @@ export default function MyApp({ Component, pageProps }) {
 
    return (
       <>
-         <Head>
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-            <link
-               href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
-               rel="stylesheet"
-            />
-            <link
-               href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap"
-               rel="stylesheet"
-            />
-         </Head>
          <CartContext.Provider
             value={{
                cartState,
