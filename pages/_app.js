@@ -2,13 +2,12 @@ import { useEffect, useReducer } from 'react';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 
-import { AppHead } from '../components/Heads/AppHead';
 import { Navbar } from '../components/Navbar';
 import { CartContext } from '../context/CartContext';
 import { CartReducer } from '../reducers/CartReducer';
 import { loadCartFromStorage } from '../actions/cart';
 
-import 'tailwindcss/tailwind.css'
+import 'tailwindcss/tailwind.css';
 import 'nprogress/nprogress.css';
 import '../styles/globals.css';
 
@@ -35,7 +34,6 @@ export default function MyApp({ Component, pageProps }) {
 
    return (
       <>
-         <AppHead />
          <CartContext.Provider
             value={{
                cartState,

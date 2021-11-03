@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react';
+import Image from 'next/image';
 
 import { removeFromCart } from '../../../actions/cart';
 import { CartContext } from '../../../context/CartContext';
@@ -10,7 +11,7 @@ export const ProductCartCard = ({ cartItem, setTotalPrice }) => {
 
    useEffect(() => {
       setTotalPrice((prev) => prev + Number(cartItem.variants[0].price));
-   }, []);
+   }, [cartItem.variants, setTotalPrice]);
 
    const handleRemoveItem = () => {
       dispatch(removeFromCart(cartItem.id));
@@ -27,10 +28,12 @@ export const ProductCartCard = ({ cartItem, setTotalPrice }) => {
          >
             <BsTrash className="w-5 h-5" />
          </button>
-         <section>
-            <img
+         <section className="relative w-24 h-24">
+            <Image
                src={cartItem.images[0].src}
-               className="w-28 h-28 md:w-24 md:-24 object-contain"
+               alt={cartItem.title}
+               layout="fill"
+               objectFit="contain"
             />
          </section>
          <section className="flex w-full flex-col justify-between">

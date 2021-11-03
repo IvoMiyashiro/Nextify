@@ -21,7 +21,7 @@ export const TopNav = ({ setCartOpen, setMenuOpen }) => {
          <section>
             <Link href="/">
                <a className="cursor-pointer">
-                  <h3 className="text-title font-extrabold text-2xl">
+                  <h3 className="font-title font-extrabold text-2xl">
                      Nextify
                   </h3>
                </a>

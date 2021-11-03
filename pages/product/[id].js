@@ -25,7 +25,7 @@ export default function Products({ product, bestSellers }) {
             setIsInCart(true);
          }
       });
-   }, [cartState]);
+   }, [cartState, product.id]);
 
    const handleSetItemToCart = () => {
       dispatch(addToCart(product));

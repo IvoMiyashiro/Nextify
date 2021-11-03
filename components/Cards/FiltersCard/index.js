@@ -15,10 +15,9 @@ export const FiltersCard = ({
 }) => {
 
    const [brandsArr, setTest] = useState([]);
-   let brandsAuxArr = [];
 
    useEffect(() => {
-      brandsAuxArr = [];
+      let brandsAuxArr = [];
       const newArr = products.map(product => {
          if (brandsAuxArr.includes(product.vendor)) return null;
          brandsAuxArr.push(product.vendor);

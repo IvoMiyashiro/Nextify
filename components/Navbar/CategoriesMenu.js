@@ -17,7 +17,7 @@ export const CategoriesMenu = () => {
             {collectionArr.map((collection) => {
                if (collection.image !== null) {
                   return (
-                     <Link href={`/collections/${collection.id}`} key={collection.id}>
+                     <Link href={`/collections/${collection.id}`} key={collection.id} passHref>
                         <li
                            className="text-md font-normal hover:text-purple-500"
                         >

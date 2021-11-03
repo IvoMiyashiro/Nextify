@@ -18,7 +18,7 @@ export const BestSellers = ({ products }) => {
          return product;
       });
       setCarrouselArr(prev => [...prev, thirdSlide]);
-   }, []);
+   }, [products]);
 
    return (
       <div className="p-4 max-w-screen-lg md:w-4/5 mx-auto my-0 py-20">

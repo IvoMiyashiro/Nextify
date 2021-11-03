@@ -20,7 +20,7 @@ export const ProductMainCard = ({ product, productDisplay = 'card' }) => {
          }
       });
 
-   }, [cartState]);
+   }, [cartState, product]);
 
    const handleSetItemToCart = () => {
       dispatch(addToCart(product));

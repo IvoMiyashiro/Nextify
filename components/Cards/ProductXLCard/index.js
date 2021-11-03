@@ -17,7 +17,9 @@ export const ProductXLCard = ({ product }) => {
                   <p className="md:text-2xl text-lg font-bold text-purple-500 mt-4">$ {product.variants[0].price}</p>
                </section>
                <Link href={`/product/${product.handle}`}>
-                  <button className="w-40 h-10 font-bold mt-8 bg-black text-white"> Buy Now </button>
+                  <a>
+                     <button className="w-40 h-10 font-bold mt-8 bg-black text-white"> Buy Now </button>
+                  </a>
                </Link>
             </section>
             <section className="relative w-48 h-72">

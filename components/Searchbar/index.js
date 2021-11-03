@@ -104,6 +104,7 @@ export const Searchbar = () => {
                                  <div className="flex gap-2 hover:bg-custom py-2 rounded-md">
                                     <div className="relative h-16 w-16">
                                        <Image
+                                          alt={hit.title}
                                           src={hit.images[0]}
                                           layout="fill"
                                           objectFit="contain"

@@ -12,13 +12,13 @@ export const Footer = ({ alternative = false }) => {
                &&
                <>
                   <section>
-                     <Link href="/">
+                     <Link href="/" passHref>
                         <h1 className="font-title font-extrabold text-4xl cursor-pointer">Nextify</h1>
                      </Link>
                   </section>
                   <section className="mt-4">
                      <ul className="flex flex-wrap justify-center gap-10 gap-y-4 mx-auto my-0 max-w-screen-lg">
-                        <Link href="/collections/Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzM0NTA3NTUxNTYwNg==">
+                        <Link href="/collections/Z2lkOi8vc2hvcGlmeS9Db2xsZWN0aW9uLzM0NTA3NTUxNTYwNg==" passHref>
                            <li className="border-b-2 border-transparent pb-1 cursor-pointer font-bold">
                               All products
                            </li>
@@ -28,12 +28,12 @@ export const Footer = ({ alternative = false }) => {
                               Categories
                            </button>
                         </li>
-                        <Link href="/about">
+                        <Link href="/about" passHref>
                            <li className="border-b-2 border-transparent pb-2 cursor-pointer font-bold">
                               About
                            </li>
                         </Link>
-                        <Link href="/contact">
+                        <Link href="/contact" passHref>
                            <li className="border-b-2 border-transparent pb-2 cursor-pointer font-bold">
                               Contact
                            </li>

@@ -49,14 +49,13 @@ export const MobileMenu = ({ isMenuOpen, setMenuOpen }) => {
                <ul className="flex flex-col">
                   <Link
                      href="/all-products"
+                     passHref
                   >
                      <li
                         className="bg-gray-200 p-2 font-bold text-xl m-2 rounded-lg"
                         onClick={handleChangeRoute}
                      >
-                        <a className="w-full">
-                           All products
-                        </a>
+                        All products
                      </li>
                   </Link>
                   <li
@@ -74,7 +73,7 @@ export const MobileMenu = ({ isMenuOpen, setMenuOpen }) => {
                            {collectionArr.map((collection) => {
                               if (collection.image !== null) {
                                  return (
-                                    <Link href={`/collections/${collection.id}`} key={collection.id}>
+                                    <Link href={`/collections/${collection.id}`} key={collection.id} passHref>
                                        <li
                                           className="text-md font-normal hover:text-purple-500 py-2"
                                        >
@@ -88,7 +87,7 @@ export const MobileMenu = ({ isMenuOpen, setMenuOpen }) => {
                         </ul>
                      </div>
                   </li>
-                  <Link href="/about">
+                  <Link href="/about" passHref>
                      <li
                         className="bg-gray-200 p-2 font-bold text-xl m-2 rounded-lg"
                         onClick={handleChangeRoute}
@@ -98,7 +97,7 @@ export const MobileMenu = ({ isMenuOpen, setMenuOpen }) => {
                         </a>
                      </li>
                   </Link>
-                  <Link href="/contact">
+                  <Link href="/contact" passHref>
                      <li
                         className="bg-gray-200 p-2 font-bold text-xl m-2 rounded-lg"
                         onClick={handleChangeRoute}
