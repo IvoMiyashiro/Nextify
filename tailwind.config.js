@@ -19,6 +19,7 @@ module.exports = {
             productInfo: '28rem'
          },
          height: {
+            hero: '27rem',
             productCarrousel: '27rem'
          },
          zIndex: {

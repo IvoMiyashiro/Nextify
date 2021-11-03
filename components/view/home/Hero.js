@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image'
 import { BiChevronRight } from 'react-icons/bi';
 
 export const Hero = () => {
@@ -16,15 +17,22 @@ export const Hero = () => {
                   An Online Shop created with Next.js, Shopify SDK and Tailwind
                   CSS.
                </p>
-               <Link href="/all-products">
-                  <button className="flex items-center md:mx-0 mx-auto my-0 justify-center gap-1 h-12 w-44 bg-black text-white font-bold text-lg mt-14 ">
-                     Shop now
-                     <BiChevronRight className="w-6 h-6 mt-0.5 left-to-right" />
-                  </button>
+               <Link href="/all-products" passHref>
+                  <a>
+                     <button className="flex items-center md:mx-0 mx-auto my-0 justify-center gap-1 h-12 w-44 bg-black text-white font-bold text-lg mt-14 ">
+                        Shop now
+                        <BiChevronRight className="w-6 h-6 mt-0.5 left-to-right" />
+                     </button>
+                  </a>
                </Link>
             </section>
-            <section className="justify-center items-center relative hidden md:flex">
-               <img src="assets/heroimgs/hero.png" alt="nextify" className="w-hero" />
+            <section className="relative justify-center items-center relative hidden md:flex w-hero h-hero">
+               <Image
+                  src="/assets/heroimgs/hero.png"
+                  alt="nextify"
+                  layout="fill"
+                  objectFit="contain"
+               />
             </section>
          </div>
       </div>
