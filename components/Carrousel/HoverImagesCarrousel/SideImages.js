@@ -1,17 +1,12 @@
 import Image from 'next/image';
 
 export const SideImages = ({
-   setImageUrl,
-   setImageActive,
+   handleImageChange,
    imageSrc,
    index,
-   imageActive
+   imageActive,
+   alt,
 }) => {
-
-   const handleImageChange = (e, index) => {
-      setImageUrl(e.target.src);
-      setImageActive(Number(index));
-   };
 
    return (
       <div
@@ -22,9 +17,10 @@ export const SideImages = ({
          >
             <Image
                src={imageSrc}
+               alt={alt}
                layout="fill"
                objectFit="contain"
-               onMouseEnter={(e) => handleImageChange(e, index)}
+               onMouseEnter={() => handleImageChange(index)}
             />
          </div>
       </div>

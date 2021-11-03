@@ -43,6 +43,7 @@ export default function Products({ product, bestSellers }) {
                <div className="my-0 mx-auto md:h-productCarrousel md:w-productCarrousel rounded-xl md:sticky top-44">
                   <HoverImagesCarrousel
                      imgs={product.images.map(img => { return img; })}
+                     title={product.title}
                   />
                </div>
                <div className="md:w-productInfo flex flex-col box-shadow p-6 rounded-xl">
