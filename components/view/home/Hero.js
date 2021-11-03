@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image'
+import Image from 'next/image';
 import { BiChevronRight } from 'react-icons/bi';
 
 export const Hero = () => {
