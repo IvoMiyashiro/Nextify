@@ -28,7 +28,7 @@ export const Hero = () => {
             </section>
             <section className="relative justify-center items-center relative hidden md:flex w-hero h-hero">
                <Image
-                  src="/assets/hero.png"
+                  src="/hero.png"
                   alt="nextify"
                   layout="fill"
                   objectFit="contain"
